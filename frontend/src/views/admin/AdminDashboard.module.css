@@ -38,10 +38,12 @@
 
 .searchContainer {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .searchInput {
-  padding: 0.625rem 1rem 0.625rem 2.5rem;
+  padding: 0.625rem 1rem 0.625rem 2.75rem;
   border: 1px solid var(--color-neutral-300, #D1D5DB);
   border-radius: 8px;
   font-size: 0.875rem;
@@ -62,9 +64,12 @@
   left: 0.75rem;
   top: 50%;
   transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   color: var(--color-neutral-400, #9CA3AF);
+  pointer-events: none;
+  z-index: 1;
+  flex-shrink: 0;
 }
 
 .newIssueButton {

@@ -52,8 +52,8 @@ function LoginPage() {
       </div>
 
       {/* Right - Form */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '3rem', width: '100%' }}>
-        <div style={{ width: '100%', maxWidth: 550, background: 'white', padding: '2.5rem', borderRadius: 12, boxShadow: '0 4px 24px rgba(0,0,0,0.08)' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1.5rem 1rem', width: '100%' }}>
+        <div style={{ width: '100%', maxWidth: 520, background: 'white', padding: '2.5rem', borderRadius: 12, boxShadow: '0 4px 24px rgba(0,0,0,0.08)' }}>
           <h2 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#0a2240', marginBottom: '0.25rem' }}>Welcome Back</h2>
           <p style={{ fontSize: '0.9rem', color: '#666', marginBottom: '1.5rem' }}>Sign in to your account</p>
 
