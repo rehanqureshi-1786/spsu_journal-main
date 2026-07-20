@@ -26,17 +26,17 @@ function HomePage() {
   }
 
   return (
-    <div style={{ backgroundColor: '#f5f5f5' }}>
+    <div style={{ backgroundColor: '#f5f5f5', overflowX: 'hidden', width: '100%', maxWidth: '100vw' }}>
       {/* ===== HERO ===== */}
       <section style={{ background: 'linear-gradient(160deg, #0a1628 0%, #122a4e 40%, #1a5490 100%)', color: 'white', padding: '6rem 2rem 5rem', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundImage: 'radial-gradient(ellipse at 20% 80%, rgba(212,175,55,0.12) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(26,84,144,0.2) 0%, transparent 50%)', pointerEvents: 'none' }}></div>
         <div style={{ position: 'relative', zIndex: 1, maxWidth: 900, margin: '0 auto' }}>
           <img src="/spsu-logo.png" alt="SPSU" style={{ width: 180, height: 'auto', objectFit: 'contain', margin: '0 auto 1.5rem', background: 'white', borderRadius: 16, padding: '10px 20px', boxShadow: '0 4px 20px rgba(0,0,0,0.2)' }} />
-          <div style={{ display: 'inline-block', padding: '0.4rem 1.5rem', border: '1px solid rgba(212,175,55,0.4)', borderRadius: 30, fontSize: '0.75rem', letterSpacing: 3, color: '#d4af37', marginBottom: '1.5rem', fontWeight: 600, textTransform: 'uppercase' }}>
+          <div className="university-name" style={{ display: 'inline-block', padding: '0.4rem 1.5rem', border: '1px solid rgba(212,175,55,0.4)', borderRadius: 30, color: '#d4af37', marginBottom: '1.5rem', fontWeight: 600, textTransform: 'uppercase' }}>
             Sir Padampat Singhania University, Udaipur
           </div>
-          <h1 style={{ fontSize: '4.5rem', fontWeight: 900, letterSpacing: '0.4rem', marginBottom: '0.5rem', lineHeight: 1, color: '#d4af37', textShadow: '0 2px 20px rgba(212,175,55,0.3)' }}>THE ESSENCE</h1>
-          <p style={{ fontSize: '0.85rem', letterSpacing: 4, color: '#ffffff', marginBottom: '2rem', textTransform: 'uppercase', fontWeight: 500 }}>A Multidisciplinary Peer-Reviewed Academic Journal</p>
+          <h1 className="journal-title" style={{ textShadow: '0 2px 20px rgba(212,175,55,0.3)', marginBottom: '0.5rem' }}>THE ESSENCE</h1>
+          <p className="journal-subtitle" style={{ color: '#ffffff', marginBottom: '2rem', textTransform: 'uppercase', fontWeight: 500 }}>A Multidisciplinary Peer-Reviewed Academic Journal</p>
           <div style={{ width: 60, height: 3, background: '#d4af37', margin: '0 auto 2rem', borderRadius: 2 }}></div>
           <p style={{ fontSize: '1.1rem', color: '#ffffff', maxWidth: 700, margin: '0 auto 2.5rem', lineHeight: 1.8 }}>
             Publishing original research across Engineering, Science, Management, Humanities & Social Sciences. Committed to academic excellence and advancing knowledge since establishment.
@@ -162,7 +162,7 @@ function HomePage() {
             <div style={{ width: 60, height: 3, background: '#d4af37', margin: '0 auto 1.5rem', borderRadius: 2 }}></div>
             <p style={{ fontSize: '1rem', color: '#555', maxWidth: 600, margin: '0 auto', lineHeight: 1.7 }}>Simple and transparent submission process</p>
           </div>
-          <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', gap: '0', flexWrap: 'nowrap' }}>
+          <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
             {[
               { step: '01', title: 'Register', desc: 'Create an author account' },
               { step: '02', title: 'Submit', desc: 'Upload manuscript (PDF)' },
@@ -177,7 +177,7 @@ function HomePage() {
                   <p style={{ fontSize: '0.8rem', color: '#666', lineHeight: 1.4, margin: 0 }}>{item.desc}</p>
                 </div>
                 {i < 4 && (
-                  <div style={{ display: 'flex', alignItems: 'center', paddingTop: 18, margin: '0 0.5rem', color: '#d4af37', fontSize: '1.5rem', fontWeight: 700 }}>→</div>
+                  <div style={{ display: 'flex', alignItems: 'center', paddingTop: 18, margin: '0 0.25rem', color: '#d4af37', fontSize: '1.5rem', fontWeight: 700 }} className="process-arrow">→</div>
                 )}
               </div>
             ))}
