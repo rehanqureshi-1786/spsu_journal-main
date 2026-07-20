@@ -4,7 +4,7 @@ const H = { hero: { background: 'linear-gradient(160deg, #0a1628 0%, #1a5490 100
 
 function ReviewerGuidelines() {
   return (
-    <div style={{ backgroundColor: '#f5f5f5' }}>
+    <div style={{ backgroundColor: '#f5f5f5', overflowX: 'hidden', width: '100%', maxWidth: '100vw' }}>
       <section style={H.hero}>
         <h1 style={H.h1}>Reviewer Guidelines</h1>
         <div style={H.gold}></div>
@@ -34,7 +34,7 @@ function ReviewerGuidelines() {
 
       <section style={H.sec}><div style={H.wrap}>
         <h2 style={H.title}>Review Process</h2><div style={H.gold}></div>
-        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', flexWrap: 'nowrap', marginTop: '1.5rem' }}>
+        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', flexWrap: 'wrap', gap: '1rem', marginTop: '1.5rem' }}>
           {[['01','Assignment','Receive review invitation'],['02','Download','Access anonymized manuscript'],['03','Evaluate','Assess using review criteria'],['04','Submit','Provide recommendation & comments']].map(([n,t,d],i) => (
             <div key={i} style={{ display: 'flex', alignItems: 'flex-start' }}>
               <div style={{ textAlign: 'center', minWidth: 130 }}>
@@ -42,7 +42,7 @@ function ReviewerGuidelines() {
                 <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0a1628', marginBottom: '0.15rem' }}>{t}</h3>
                 <p style={{ fontSize: '0.8rem', color: '#666', margin: 0 }}>{d}</p>
               </div>
-              {i < 3 && <div style={{ paddingTop: 16, margin: '0 0.75rem', color: '#d4af37', fontSize: '1.5rem', fontWeight: 700 }}>→</div>}
+              {i < 3 && <div className="process-arrow" style={{ paddingTop: 16, margin: '0 0.25rem', color: '#d4af37', fontSize: '1.5rem', fontWeight: 700 }}>→</div>}
             </div>
           ))}
         </div>
