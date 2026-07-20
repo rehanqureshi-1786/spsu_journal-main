@@ -54,6 +54,11 @@ class Settings(BaseSettings):
     @field_validator("CORS_ORIGINS", mode="before")
     @classmethod
     def assemble_cors_origins(cls, v) -> list:
+        # Check environment variables explicitly to handle singular/plural and casing variations
+        env_val = os.getenv("CORS_ORIGINS") or os.getenv("CORS_ORIGIN") or os.getenv("cors_origins") or os.getenv("cors_origin")
+        if env_val:
+            v = env_val
+
         if isinstance(v, str):
             v = v.strip()
             if v.startswith("[") and v.endswith("]"):
