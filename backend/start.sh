@@ -9,9 +9,9 @@ echo "=========================================="
 echo ">> Running database migrations..."
 alembic upgrade head
 
-# Create admin user if not exists
-echo ">> Setting up admin user..."
-python create_admin.py
+# Seed roles and create admin user if not exists
+echo ">> Bootstrapping database (roles + admin)..."
+python bootstrap_db.py
 
 echo ">> Starting server..."
 uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}
