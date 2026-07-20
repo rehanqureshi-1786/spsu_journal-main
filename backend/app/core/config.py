@@ -18,8 +18,10 @@ class Settings(BaseSettings):
     DEBUG: bool = False
     
     # Cookie Security
-    COOKIE_SECURE: bool = False
-    COOKIE_SAMESITE: str = "lax"
+    # In production (cross-origin: Vercel + Railway), cookies MUST be Secure=True and SameSite=None
+    # Without this, the browser won't send cookies cross-origin and every request looks unauthenticated
+    COOKIE_SECURE: bool = True
+    COOKIE_SAMESITE: str = "none"
     
     # Database
     DATABASE_URL: str = "mysql+pymysql://root:123456@localhost:3306/essence_journal"
