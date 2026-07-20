@@ -39,7 +39,7 @@ function SignupPage() {
     try {
       setLoading(true)
       const { confirmPassword, ...signupData } = formData
-      await authorService.register(signupData)
+      await authorService.signup(signupData)
       navigate('/login', { state: { message: 'Registration successful! Please log in.' } })
     } catch (err) { setError(err.detail || err.message || 'Registration failed') }
     finally { setLoading(false) }
