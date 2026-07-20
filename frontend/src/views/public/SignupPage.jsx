@@ -48,9 +48,9 @@ function SignupPage() {
   const inp = { width: '100%', padding: '0.7rem 0.875rem', border: '2px solid #e0e0e0', borderRadius: 8, fontSize: '0.9rem', outline: 'none', boxSizing: 'border-box', transition: 'border 0.2s' }
 
   return (
-    <div style={{ minHeight: '100vh', display: 'grid', gridTemplateColumns: '1fr 1fr', background: '#f0f4f8' }}>
+    <div className="auth-page-layout" style={{ minHeight: '100vh', display: 'grid', background: '#f0f4f8' }}>
       {/* Left Branding */}
-      <div style={{ background: 'linear-gradient(160deg, #0a1628 0%, #1a5490 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '3rem', position: 'relative', overflow: 'hidden' }}>
+      <div className="auth-branding-side" style={{ background: 'linear-gradient(160deg, #0a1628 0%, #1a5490 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '3rem', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundImage: 'radial-gradient(circle at 30% 70%, rgba(212,175,55,0.1) 0%, transparent 50%)', pointerEvents: 'none' }}></div>
         <div style={{ position: 'relative', zIndex: 1, maxWidth: 420, color: 'white' }}>
           <div style={{ marginBottom: '2rem' }}>
@@ -71,8 +71,8 @@ function SignupPage() {
       </div>
 
       {/* Right Form */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem', overflowY: 'auto' }}>
-        <div style={{ width: '100%', maxWidth: 450, background: 'white', padding: '2.5rem', borderRadius: 12, boxShadow: '0 4px 24px rgba(0,0,0,0.08)' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem', overflowY: 'auto', width: '100%' }}>
+        <div style={{ width: '100%', maxWidth: 550, background: 'white', padding: '2.5rem', borderRadius: 12, boxShadow: '0 4px 24px rgba(0,0,0,0.08)' }}>
           <h2 style={{ fontSize: '1.75rem', fontWeight: 700, color: '#0a1628', marginBottom: '0.25rem' }}>Create Account</h2>
           <p style={{ fontSize: '0.9rem', color: '#666', marginBottom: '1.5rem' }}>{step === 1 ? 'Tell us about yourself' : 'Set up your credentials'}</p>
 
@@ -151,7 +151,7 @@ function SignupPage() {
         </div>
       </div>
 
-      <style>{`@media (max-width: 768px) { div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; } div[style*="grid-template-columns: 1fr 1fr"] > div:first-child { display: none !important; } }`}</style>
+      <style>{`.auth-page-layout { grid-template-columns: 1fr 1fr; } @media (max-width: 900px) { .auth-page-layout { grid-template-columns: 1fr; } .auth-branding-side { display: none !important; } }`}</style>
     </div>
   )
 }
