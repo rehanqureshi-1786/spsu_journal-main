@@ -1,0 +1,172 @@
+/**
+ * Input Example Styles
+ * 
+ * Styles for the Input component demonstration page
+ */
+
+.input-example {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-8) var(--spacing-4);
+}
+
+.input-example__header {
+  text-align: center;
+  margin-bottom: var(--spacing-10);
+}
+
+.input-example__header h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-3);
+}
+
+.input-example__header p {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.input-example__section {
+  margin-bottom: var(--spacing-12);
+}
+
+.input-example__section h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-6);
+  padding-bottom: var(--spacing-3);
+  border-bottom: 2px solid var(--color-neutral-200);
+}
+
+.input-example__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.input-example__form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--spacing-6);
+  background-color: var(--color-neutral-50);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.input-example__form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-4);
+}
+
+.input-example__form > *:not(.input-example__form-row):not(.input-example__form-actions) {
+  margin-bottom: var(--spacing-4);
+}
+
+.input-example__form-actions {
+  display: flex;
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-6);
+  padding-top: var(--spacing-6);
+  border-top: 1px solid var(--color-neutral-200);
+}
+
+/* Password toggle button */
+.password-toggle-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: var(--font-size-lg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast) var(--timing-ease-in-out);
+}
+
+.password-toggle-btn:hover {
+  transform: scale(1.1);
+}
+
+.password-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+/* Button styles for form */
+.btn-primary,
+.btn-secondary {
+  padding: var(--spacing-3) var(--spacing-6);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-lg);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast) var(--timing-ease-in-out);
+}
+
+.btn-primary {
+  background-color: var(--color-primary-main);
+  color: var(--color-primary-contrast);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: var(--color-neutral-200);
+  color: var(--color-text-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-neutral-300);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .input-example {
+    padding: var(--spacing-6) var(--spacing-3);
+  }
+
+  .input-example__header h1 {
+    font-size: var(--font-size-3xl);
+  }
+
+  .input-example__header p {
+    font-size: var(--font-size-base);
+  }
+
+  .input-example__section h2 {
+    font-size: var(--font-size-xl);
+  }
+
+  .input-example__grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+
+  .input-example__form {
+    padding: var(--spacing-4);
+  }
+
+  .input-example__form-row {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+
+  .input-example__form-actions {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+}

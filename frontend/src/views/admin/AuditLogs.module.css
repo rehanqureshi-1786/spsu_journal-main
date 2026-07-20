@@ -1,0 +1,94 @@
+/* AuditLogs Responsive Styles */
+
+.container {
+  /* Base styles handled by inline styles */
+}
+
+.header {
+  /* Base styles handled by inline styles */
+}
+
+.filtersCard {
+  /* Base styles handled by inline styles */
+}
+
+.filtersRow {
+  /* Base styles handled by inline styles */
+}
+
+.filtersInner {
+  /* Base styles handled by inline styles */
+}
+
+.searchWrapper {
+  /* Base styles handled by inline styles */
+}
+
+.filterButtons {
+  /* Base styles handled by inline styles */
+}
+
+.tableCard {
+  /* Base styles handled by inline styles */
+}
+
+.pagination {
+  /* Base styles handled by inline styles */
+}
+
+/* Responsive: Tablet (≤768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem !important;
+  }
+
+  .filtersRow {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .filtersInner {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .searchWrapper {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  .searchWrapper input {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .filterButtons {
+    width: 100% !important;
+    justify-content: stretch !important;
+  }
+
+  .filterButtons button {
+    flex: 1 !important;
+    text-align: center;
+  }
+
+  .filtersCard {
+    padding: 1rem !important;
+  }
+
+  .tableCard {
+    padding: 1rem !important;
+  }
+
+  .pagination {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+}
+
+/* Responsive: Small mobile (≤480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem !important;
+  }
+}

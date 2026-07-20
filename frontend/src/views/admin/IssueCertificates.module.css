@@ -1,0 +1,67 @@
+/* IssueCertificates Responsive Styles */
+
+.container {
+  /* Base styles handled by inline styles */
+}
+
+.header {
+  /* Base styles handled by inline styles */
+}
+
+.actionButtons {
+  /* Base styles handled by inline styles */
+}
+
+.filtersCard {
+  /* Base styles handled by inline styles */
+}
+
+.filtersGrid {
+  /* Base styles handled by inline styles */
+}
+
+.tableCard {
+  /* Base styles handled by inline styles */
+}
+
+/* Responsive: Tablet (≤768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem !important;
+  }
+
+  .actionButtons {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .actionButtons button {
+    width: 100% !important;
+    justify-content: center;
+  }
+
+  .filtersCard {
+    padding: 1rem !important;
+  }
+
+  .filtersGrid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .filtersGrid select,
+  .filtersGrid input {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .tableCard {
+    padding: 1rem !important;
+  }
+}
+
+/* Responsive: Small mobile (≤480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem !important;
+  }
+}

@@ -1,0 +1,52 @@
+/* MyReviews responsive styles */
+
+.container {
+  padding: 2rem;
+  background-color: #F9FAFB;
+  min-height: 100vh;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.reviewHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.reviewMeta {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Responsive: Tablet (≤768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .reviewHeader {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .reviewMeta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Responsive: Small mobile (≤480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem;
+  }
+}

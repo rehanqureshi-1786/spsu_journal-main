@@ -1,0 +1,59 @@
+/* SubmitPaper responsive styles */
+
+.container {
+  background-color: #F9FAFB;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.formCard {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid #E5E7EB;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #E5E7EB;
+}
+
+/* Responsive: Tablet (≤768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .formCard {
+    padding: 1.25rem;
+  }
+
+  .formCard input,
+  .formCard textarea,
+  .formCard select {
+    width: 100% !important;
+  }
+
+  .formActions {
+    flex-direction: column;
+  }
+
+  .formActions button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Responsive: Small mobile (≤480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem;
+  }
+
+  .formCard {
+    padding: 1rem;
+  }
+}

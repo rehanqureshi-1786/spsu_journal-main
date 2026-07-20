@@ -1,0 +1,16 @@
+[Unit]
+Description=SPSU Journal FastAPI Backend
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/opt/journal/backend
+Environment="PATH=/opt/journal/backend/venv/bin"
+ExecStart=/opt/journal/backend/venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000 --log-level info
+StandardOutput=append:/var/log/journal-backend.log
+StandardError=append:/var/log/journal-backend.log
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

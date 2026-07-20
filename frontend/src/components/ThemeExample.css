@@ -1,0 +1,291 @@
+/**
+ * ThemeExample Component Styles
+ * 
+ * Demonstrates using CSS custom properties from the theme system.
+ */
+
+.theme-example {
+  max-width: var(--container-lg);
+  margin: 0 auto;
+  padding: var(--spacing-8);
+  background-color: var(--color-bg-default);
+}
+
+.theme-example__title {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-8);
+  text-align: center;
+}
+
+.theme-example__section {
+  background-color: var(--color-bg-paper);
+  padding: var(--spacing-6);
+  margin-bottom: var(--spacing-6);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-base);
+}
+
+.theme-example__section h3 {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-4);
+}
+
+/* CSS Box Example */
+.theme-example__css-box {
+  background-color: var(--color-secondary-main);
+  color: var(--color-secondary-contrast);
+  padding: var(--spacing-4);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-base);
+  transition: all var(--transition-base) var(--timing-ease-in-out);
+}
+
+.theme-example__css-box:hover {
+  background-color: var(--color-secondary-light);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Color Palette */
+.theme-example__colors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--spacing-4);
+}
+
+.theme-example__color-box {
+  padding: var(--spacing-6);
+  border-radius: var(--radius-md);
+  text-align: center;
+  font-weight: var(--font-weight-semibold);
+  transition: transform var(--transition-fast) var(--timing-ease-in-out);
+}
+
+.theme-example__color-box:hover {
+  transform: scale(1.05);
+}
+
+.theme-example__color-box--primary {
+  background-color: var(--color-primary-main);
+  color: var(--color-primary-contrast);
+}
+
+.theme-example__color-box--secondary {
+  background-color: var(--color-secondary-main);
+  color: var(--color-secondary-contrast);
+}
+
+.theme-example__color-box--accent {
+  background-color: var(--color-accent-main);
+  color: var(--color-text-primary);
+}
+
+.theme-example__color-box--success {
+  background-color: var(--color-success-main);
+  color: white;
+}
+
+.theme-example__color-box--warning {
+  background-color: var(--color-warning-main);
+  color: white;
+}
+
+.theme-example__color-box--error {
+  background-color: var(--color-error-main);
+  color: white;
+}
+
+/* Typography */
+.theme-example__typography p {
+  margin-bottom: var(--spacing-2);
+  color: var(--color-text-primary);
+}
+
+.theme-example__text--xs {
+  font-size: var(--font-size-xs);
+}
+
+.theme-example__text--sm {
+  font-size: var(--font-size-sm);
+}
+
+.theme-example__text--base {
+  font-size: var(--font-size-base);
+}
+
+.theme-example__text--lg {
+  font-size: var(--font-size-lg);
+}
+
+.theme-example__text--xl {
+  font-size: var(--font-size-xl);
+}
+
+.theme-example__text--2xl {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Spacing */
+.theme-example__spacing {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--spacing-4);
+}
+
+.theme-example__spacing-box {
+  background-color: var(--color-primary-light);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-base);
+}
+
+.theme-example__spacing-box--2 {
+  width: var(--spacing-2);
+  height: var(--spacing-2);
+}
+
+.theme-example__spacing-box--4 {
+  width: var(--spacing-4);
+  height: var(--spacing-4);
+}
+
+.theme-example__spacing-box--6 {
+  width: var(--spacing-6);
+  height: var(--spacing-6);
+}
+
+.theme-example__spacing-box--8 {
+  width: var(--spacing-8);
+  height: var(--spacing-8);
+}
+
+/* Shadows */
+.theme-example__shadows {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.theme-example__shadow-box {
+  background-color: var(--color-bg-paper);
+  padding: var(--spacing-6);
+  border-radius: var(--radius-md);
+  text-align: center;
+  font-weight: var(--font-weight-medium);
+}
+
+.theme-example__shadow-box--sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-example__shadow-box--base {
+  box-shadow: var(--shadow-base);
+}
+
+.theme-example__shadow-box--md {
+  box-shadow: var(--shadow-md);
+}
+
+.theme-example__shadow-box--lg {
+  box-shadow: var(--shadow-lg);
+}
+
+.theme-example__shadow-box--xl {
+  box-shadow: var(--shadow-xl);
+}
+
+/* Buttons */
+.theme-example__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+}
+
+.theme-example__button {
+  padding: var(--spacing-3) var(--spacing-6);
+  border: none;
+  border-radius: var(--radius-base);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast) var(--timing-ease-in-out);
+}
+
+.theme-example__button:hover {
+  transform: translateY(-2px);
+}
+
+.theme-example__button:active {
+  transform: translateY(0);
+}
+
+.theme-example__button--primary {
+  background-color: var(--color-primary-main);
+  color: var(--color-primary-contrast);
+}
+
+.theme-example__button--primary:hover {
+  background-color: var(--color-primary-dark);
+  box-shadow: var(--shadow-primary);
+}
+
+.theme-example__button--secondary {
+  background-color: var(--color-secondary-main);
+  color: var(--color-secondary-contrast);
+}
+
+.theme-example__button--secondary:hover {
+  background-color: var(--color-secondary-light);
+  box-shadow: var(--shadow-md);
+}
+
+.theme-example__button--success {
+  background-color: var(--color-success-main);
+  color: white;
+}
+
+.theme-example__button--success:hover {
+  background-color: var(--color-success-dark);
+  box-shadow: var(--shadow-success);
+}
+
+.theme-example__button--danger {
+  background-color: var(--color-error-main);
+  color: white;
+}
+
+.theme-example__button--danger:hover {
+  background-color: var(--color-error-dark);
+  box-shadow: var(--shadow-error);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .theme-example {
+    padding: var(--spacing-4);
+  }
+
+  .theme-example__section {
+    padding: var(--spacing-4);
+  }
+
+  .theme-example__colors {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .theme-example__buttons {
+    flex-direction: column;
+  }
+
+  .theme-example__button {
+    width: 100%;
+  }
+}

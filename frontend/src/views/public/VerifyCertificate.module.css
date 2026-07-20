@@ -1,0 +1,267 @@
+/**
+ * VerifyCertificate Component Styles
+ * Responsive design with mobile-first media queries
+ */
+
+/* Form Card */
+.formCard {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.formHeading {
+  margin-top: 0;
+}
+
+.formDescription {
+  margin-bottom: 2rem;
+  color: #6B7280;
+}
+
+/* Form Elements */
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.formInput {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: monospace;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.formInput:disabled {
+  background-color: #F9FAFB;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+}
+
+.submitButton {
+  flex: 1;
+  padding: 0.875rem 1.5rem;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  background-color: #4F46E5;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: #4338CA;
+}
+
+.submitButton:disabled {
+  background-color: #9CA3AF;
+  cursor: not-allowed;
+}
+
+.resetButton {
+  padding: 0.875rem 1.5rem;
+  background-color: white;
+  color: #6B7280;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.resetButton:hover {
+  background-color: #F9FAFB;
+  border-color: #9CA3AF;
+}
+
+
+/* Error Message */
+.errorBox {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  border-radius: 8px;
+  color: #991B1B;
+}
+
+.errorContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.errorIcon {
+  font-size: 1.25rem;
+}
+
+.errorTitle {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+/* Success Result */
+.successBox {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background-color: #F0FDF4;
+  border: 2px solid #86EFAC;
+  border-radius: 8px;
+}
+
+.successHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.successIcon {
+  font-size: 1.5rem;
+}
+
+.successTitle {
+  margin: 0;
+  color: #166534;
+  font-size: 1.25rem;
+}
+
+.resultDetails {
+  background-color: white;
+  padding: 1.25rem;
+  border-radius: 8px;
+  border: 1px solid #D1FAE5;
+}
+
+.resultGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.resultLabel {
+  font-size: 0.875rem;
+  color: #6B7280;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.resultValue {
+  font-size: 1rem;
+  color: #111827;
+}
+
+.resultValueMono {
+  font-size: 1rem;
+  color: #111827;
+  font-family: monospace;
+  font-weight: 600;
+}
+
+.certTypeBadge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.badgeSubscription {
+  background-color: #DBEAFE;
+  color: #1E40AF;
+}
+
+.badgeEvent {
+  background-color: #E0E7FF;
+  color: #3730A3;
+}
+
+.verifiedNote {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: #ECFDF5;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #065F46;
+}
+
+/* Info Section Card */
+.infoCard {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.infoFeatureList {
+  grid-template-columns: 1fr;
+}
+
+.infoItemDescription {
+  margin: 0.25rem 0 0 0;
+  color: #6B7280;
+  font-size: 0.875rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .formCard,
+  .infoCard {
+    max-width: 100%;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+  }
+
+  .submitButton,
+  .resetButton {
+    width: 100%;
+  }
+
+  .successBox {
+    padding: 1rem;
+  }
+
+  .resultDetails {
+    padding: 1rem;
+  }
+
+  .resultValueMono {
+    font-size: 0.875rem;
+    word-break: break-all;
+  }
+}
+
+@media (max-width: 480px) {
+  .successTitle {
+    font-size: 1.1rem;
+  }
+
+  .resultLabel {
+    font-size: 0.8rem;
+  }
+
+  .resultValue,
+  .resultValueMono {
+    font-size: 0.875rem;
+  }
+
+  .formInput {
+    font-size: 0.875rem;
+  }
+}

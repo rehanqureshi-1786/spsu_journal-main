@@ -1,0 +1,175 @@
+/**
+ * Card Component Styles
+ * 
+ * Modern card styling with variants and optional sections.
+ * Uses theme variables for consistency.
+ */
+
+/* ===== BASE CARD STYLES ===== */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-paper);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: all var(--transition-base) var(--timing-ease-in-out);
+}
+
+/* ===== VARIANT STYLES ===== */
+
+/* Default variant - subtle border */
+.card--default {
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Elevated variant - prominent shadow */
+.card--elevated {
+  border: none;
+  box-shadow: var(--shadow-md);
+}
+
+/* Outlined variant - border only, no shadow */
+.card--outlined {
+  border: 2px solid var(--color-border-main);
+  box-shadow: none;
+}
+
+/* ===== HOVER EFFECTS ===== */
+
+.card--hoverable:hover {
+  transform: translateY(-2px);
+}
+
+.card--default.card--hoverable:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border-main);
+}
+
+.card--elevated.card--hoverable:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.card--outlined.card--hoverable:hover {
+  border-color: var(--color-primary-main);
+}
+
+/* ===== CLICKABLE CARDS ===== */
+
+.card--clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.card--clickable:focus-visible {
+  outline: 2px solid var(--color-primary-main);
+  outline-offset: 2px;
+}
+
+.card--clickable:active {
+  transform: translateY(0);
+}
+
+.card--default.card--clickable:active {
+  box-shadow: var(--shadow-sm);
+}
+
+.card--elevated.card--clickable:active {
+  box-shadow: var(--shadow-md);
+}
+
+/* ===== CARD SECTIONS ===== */
+
+/* Header Section */
+.card__header {
+  padding: var(--spacing-5) var(--spacing-6);
+  border-bottom: 1px solid var(--color-border-light);
+  background-color: var(--color-bg-alt);
+}
+
+.card__header:empty {
+  display: none;
+}
+
+/* Body Section */
+.card__body {
+  padding: var(--spacing-6);
+  flex: 1;
+}
+
+/* Footer Section */
+.card__footer {
+  padding: var(--spacing-5) var(--spacing-6);
+  border-top: 1px solid var(--color-border-light);
+  background-color: var(--color-bg-alt);
+}
+
+.card__footer:empty {
+  display: none;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+
+@media (max-width: 768px) {
+  .card {
+    border-radius: var(--radius-lg);
+  }
+
+  .card__header {
+    padding: var(--spacing-4) var(--spacing-5);
+  }
+
+  .card__body {
+    padding: var(--spacing-5);
+  }
+
+  .card__footer {
+    padding: var(--spacing-4) var(--spacing-5);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    border-radius: var(--radius-md);
+  }
+
+  .card__header {
+    padding: var(--spacing-3) var(--spacing-4);
+  }
+
+  .card__body {
+    padding: var(--spacing-4);
+  }
+
+  .card__footer {
+    padding: var(--spacing-3) var(--spacing-4);
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .card--default,
+  .card--outlined {
+    border-width: 2px;
+  }
+
+  .card__header,
+  .card__footer {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+
+  .card--hoverable:hover,
+  .card--clickable:active {
+    transform: none;
+  }
+}

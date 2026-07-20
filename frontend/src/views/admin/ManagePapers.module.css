@@ -1,0 +1,75 @@
+/* ManagePapers Responsive Styles */
+
+.container {
+  /* Base styles handled by inline styles */
+}
+
+.toolbar {
+  /* Base styles handled by inline styles */
+}
+
+.toolbarRow {
+  /* Base styles handled by inline styles */
+}
+
+.bulkActions {
+  /* Base styles handled by inline styles */
+}
+
+/* Responsive: Tablet (≤768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem !important;
+  }
+
+  .toolbar {
+    padding: 1rem !important;
+  }
+
+  .toolbarRow {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .toolbarRow > div {
+    min-width: 0 !important;
+  }
+
+  .toolbarRow input[type="text"],
+  .toolbarRow input[type="date"],
+  .toolbarRow select {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .toolbarRow > div:has(select) {
+    width: 100% !important;
+  }
+
+  .toolbarRow > div:has(input) {
+    flex: unset !important;
+    width: 100% !important;
+  }
+
+  .header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .bulkActions {
+    width: 100% !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .bulkActions button {
+    width: 100% !important;
+  }
+}
+
+/* Responsive: Small mobile (≤480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem !important;
+  }
+}

@@ -1,0 +1,17 @@
+name: Deploy to AWS EC2
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1
+        with:
+          host: 100.49.35.251
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: /opt/journal/deploy.sh

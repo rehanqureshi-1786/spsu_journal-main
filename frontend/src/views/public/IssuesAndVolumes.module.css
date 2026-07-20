@@ -1,0 +1,243 @@
+/**
+ * IssuesAndVolumes Component Styles
+ * Responsive design with mobile-first media queries
+ */
+
+/* Volume/Issue Selection Buttons */
+.selectionButtons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.volumeButton {
+  padding: 1rem 2rem;
+  border: 2px solid #1a5490;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: white;
+  color: #1a1a2e;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.volumeButton:hover {
+  background-color: #f0f8ff;
+}
+
+.volumeButtonActive {
+  background-color: #1a5490;
+  color: white;
+  box-shadow: 0 4px 12px rgba(74, 158, 255, 0.3);
+}
+
+.volumeButtonActive:hover {
+  background-color: #1a5490;
+}
+
+.issueButton {
+  padding: 0.875rem 1.75rem;
+  border: 2px solid #1a5490;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  background-color: white;
+  color: #1a1a2e;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.issueButton:hover {
+  background-color: #f0f8ff;
+}
+
+.issueButtonActive {
+  background-color: #1a5490;
+  color: white;
+  box-shadow: 0 4px 12px rgba(74, 158, 255, 0.3);
+}
+
+.issueButtonActive:hover {
+  background-color: #1a5490;
+}
+
+
+.issueBadge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 2px solid white;
+}
+
+.badgeActive {
+  background-color: #10B981;
+}
+
+.badgeEmpty {
+  background-color: #9CA3AF;
+}
+
+/* Article Count */
+.articleCount {
+  margin-left: 1rem;
+  font-size: 0.9rem;
+  color: #6B7280;
+  font-weight: 400;
+}
+
+/* Papers List */
+.papersList {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.paperCard {
+  padding: 2rem;
+}
+
+.paperTitle {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #1a1a2e;
+  font-weight: 600;
+}
+
+.paperMeta {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 0.75rem;
+}
+
+.paperMetaSmall {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.75rem;
+}
+
+.paperAbstract {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.downloadLink {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #1a5490;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  margin-top: 0.5rem;
+}
+
+.downloadLink:hover {
+  background-color: #0f3d6e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 158, 255, 0.4);
+}
+
+/* Skeleton Grid */
+.skeletonGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Verification Card */
+.verificationCard {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .selectionButtons {
+    gap: 0.75rem;
+  }
+
+  .volumeButton {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .issueButton {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .paperCard {
+    padding: 1.25rem;
+  }
+
+  .paperTitle {
+    font-size: 1.15rem;
+  }
+
+  .paperMeta,
+  .paperMetaSmall {
+    font-size: 0.85rem;
+  }
+
+  .articleCount {
+    display: block;
+    margin-left: 0;
+    margin-top: 0.25rem;
+  }
+
+  .skeletonGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .downloadLink {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .selectionButtons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .volumeButton,
+  .issueButton {
+    width: 100%;
+    text-align: center;
+  }
+
+  .paperTitle {
+    font-size: 1.05rem;
+  }
+
+  .paperCard {
+    padding: 1rem;
+  }
+
+  .paperAbstract {
+    line-height: 1.6;
+    font-size: 0.9rem;
+  }
+}

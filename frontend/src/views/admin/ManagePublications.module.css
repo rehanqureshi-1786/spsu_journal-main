@@ -1,0 +1,50 @@
+/* ManagePublications Responsive Styles */
+
+.container {
+  /* Base styles handled by inline styles */
+}
+
+.header {
+  /* Base styles handled by inline styles */
+}
+
+.actionButtons {
+  /* Base styles handled by inline styles */
+}
+
+.volumeGrid {
+  /* Base styles handled by inline styles */
+}
+
+/* Responsive: Tablet (≤768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem !important;
+  }
+
+  .header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .actionButtons {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .actionButtons button {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .volumeGrid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Responsive: Small mobile (≤480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem !important;
+  }
+}

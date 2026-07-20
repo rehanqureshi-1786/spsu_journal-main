@@ -1,0 +1,27 @@
+/* AssignReviewers Responsive Styles */
+
+.container {
+  /* Base styles handled by inline styles */
+}
+
+.papersGrid {
+  /* Base styles handled by inline styles */
+}
+
+/* Responsive: Tablet (≤768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem !important;
+  }
+
+  .papersGrid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Responsive: Small mobile (≤480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem !important;
+  }
+}

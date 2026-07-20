@@ -1,0 +1,199 @@
+/* DragDropList Component Styles */
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  width: 100%;
+}
+
+.list--disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* List item */
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--border-radius-md);
+  cursor: move;
+  transition: all var(--transition-duration-base) var(--transition-timing-ease);
+  user-select: none;
+  touch-action: none;
+}
+
+.item:hover {
+  border-color: var(--color-neutral-300);
+  box-shadow: var(--shadow-sm);
+}
+
+.item:focus {
+  outline: none;
+  border-color: var(--color-primary-main);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.item--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Dragging state */
+.item--dragged {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+.item--dragging {
+  opacity: 0.3;
+}
+
+/* Drag over state */
+.item--drag-over {
+  border-color: var(--color-primary-main);
+  background-color: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.item--drag-over::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-primary-main);
+  border-radius: var(--border-radius-full);
+}
+
+/* Drag handle */
+.dragHandle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--color-neutral-400);
+  cursor: grab;
+  flex-shrink: 0;
+  transition: color var(--transition-duration-base) var(--transition-timing-ease);
+}
+
+.dragHandle:active {
+  cursor: grabbing;
+}
+
+.item:hover .dragHandle {
+  color: var(--color-neutral-600);
+}
+
+.dragHandle svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Item content */
+.itemContent {
+  flex: 1;
+  min-width: 0; /* Allow content to shrink */
+}
+
+/* Empty state */
+.emptyState {
+  padding: var(--spacing-8);
+  text-align: center;
+  color: var(--color-neutral-500);
+  background-color: var(--color-neutral-50);
+  border: 2px dashed var(--color-neutral-300);
+  border-radius: var(--border-radius-md);
+}
+
+.emptyState p {
+  margin: 0;
+  font-size: var(--font-size-base);
+}
+
+/* Animation for reordering */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.item {
+  animation: slideIn var(--transition-duration-base) var(--transition-timing-ease);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .item {
+    padding: var(--spacing-2);
+    gap: var(--spacing-2);
+  }
+
+  .dragHandle {
+    width: 20px;
+    height: 20px;
+  }
+
+  .dragHandle svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .item {
+    cursor: default;
+  }
+
+  .dragHandle {
+    cursor: default;
+    width: 32px;
+    height: 32px;
+    padding: var(--spacing-1);
+  }
+
+  .dragHandle svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .item:hover {
+    border-color: var(--color-neutral-200);
+    box-shadow: none;
+  }
+
+  .item:active {
+    border-color: var(--color-primary-main);
+    background-color: var(--color-primary-light);
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .item {
+    animation: none;
+    transition: none;
+  }
+
+  .item--drag-over {
+    transform: none;
+  }
+
+  .item--dragged {
+    transform: none;
+  }
+}

@@ -1,0 +1,131 @@
+.toolbar {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-bg-paper);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  z-index: var(--z-index-fixed);
+  border: 1px solid var(--color-border-light);
+  transition: all var(--transition-base) var(--timing-ease-in-out);
+}
+
+.toolbar.editing {
+  border-color: var(--color-primary-main);
+  box-shadow: var(--shadow-primary-lg);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all var(--transition-fast) var(--timing-ease-in-out);
+  white-space: nowrap;
+}
+
+.btnEdit {
+  background: var(--color-primary-main);
+  color: white;
+}
+
+.btnEdit:hover {
+  background: var(--color-primary-dark);
+}
+
+.btnSave {
+  background: var(--color-success-main);
+  color: white;
+}
+
+.btnSave:hover {
+  background: var(--color-success-dark);
+}
+
+.btnSave:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btnCancel {
+  background: var(--color-neutral-200);
+  color: var(--color-text-primary);
+}
+
+.btnCancel:hover {
+  background: var(--color-neutral-300);
+}
+
+.statusText {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-hint);
+  padding: 0 0.5rem;
+}
+
+/* Global editing indicator — entire page wrapper gets a subtle border */
+:global(.inline-editing) {
+  outline: 2px dashed var(--color-primary-300);
+  outline-offset: 4px;
+  border-radius: var(--radius-base);
+  cursor: text;
+}
+
+/* Highlight individual blocks on hover while editing */
+:global(.inline-editing) > section,
+:global(.inline-editing) > div {
+  transition: background-color var(--transition-fast) var(--timing-ease-in-out);
+}
+
+:global(.inline-editing) > section:hover,
+:global(.inline-editing) > div:hover {
+  background-color: rgba(74, 158, 255, 0.03);
+}
+
+/* Highlight focused elements inside editing wrapper */
+:global(.inline-editing) *:focus {
+  outline: 2px solid var(--color-primary-400);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Editable images — show overlay hint during edit mode */
+:global(.inline-edit-image) {
+  transition: filter 0.2s ease;
+  outline: 2px dashed var(--color-primary-300);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+:global(.inline-edit-image-wrapper) {
+  cursor: pointer !important;
+}
+
+/* Locked (database-driven) sections — visually muted, not editable */
+:global(.inline-editing) [data-no-edit] {
+  opacity: 0.5;
+  pointer-events: none;
+  position: relative;
+}
+
+:global(.inline-editing) [data-no-edit]::after {
+  content: '🔒 Database content';
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: var(--color-neutral-700);
+  color: white;
+  font-size: 0.65rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-md);
+  pointer-events: none;
+  z-index: 10;
+}

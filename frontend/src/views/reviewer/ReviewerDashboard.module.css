@@ -1,0 +1,429 @@
+/* ReviewerDashboard Styles - Modern Design */
+
+.container {
+  background-color: var(--color-neutral-50, #F9FAFB);
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--color-neutral-900, #111827);
+  margin-bottom: 0.25rem;
+}
+
+.header p {
+  font-size: 0.875rem;
+  color: var(--color-neutral-600, #6B7280);
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.metricCard {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--color-neutral-200, #E5E7EB);
+  transition: all 0.2s ease;
+}
+
+.metricCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.metricHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.metricLabel {
+  font-size: 0.875rem;
+  color: var(--color-neutral-600, #6B7280);
+  font-weight: 500;
+}
+
+.metricIcon {
+  font-size: 1.5rem;
+}
+
+.metricValue {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-neutral-900, #111827);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.metricSubtext {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.metricSubtext.primary {
+  color: var(--color-primary-main, #1a5490);
+}
+
+.metricSubtext.warning {
+  color: var(--color-warning-main, #F59E0B);
+}
+
+.metricSubtext.success {
+  color: var(--color-success-main, #10B981);
+}
+
+.metricSubtext.error {
+  color: var(--color-error-main, #DC2626);
+}
+
+.assignmentsSection {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--color-neutral-200, #E5E7EB);
+  margin-bottom: 2rem;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.sectionTitle h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-neutral-900, #111827);
+  margin-bottom: 0.25rem;
+}
+
+.sectionTitle p {
+  font-size: 0.875rem;
+  color: var(--color-neutral-600, #6B7280);
+}
+
+.viewAllLink {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary-main, #1a5490);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.viewAllLink:hover {
+  color: var(--color-primary-dark, #0f3d6e);
+}
+
+.tableContainer {
+  overflow-x: auto;
+}
+
+.assignmentsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.assignmentsTable thead tr {
+  border-bottom: 1px solid var(--color-neutral-200, #E5E7EB);
+}
+
+.assignmentsTable th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-neutral-600, #6B7280);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.assignmentsTable th:last-child {
+  text-align: right;
+}
+
+.assignmentsTable tbody tr {
+  border-bottom: 1px solid var(--color-neutral-100, #F3F4F6);
+  transition: background-color 0.15s ease;
+}
+
+.assignmentsTable tbody tr:hover {
+  background-color: var(--color-neutral-50, #F9FAFB);
+}
+
+.assignmentsTable td {
+  padding: 1rem;
+}
+
+.paperInfo {
+  max-width: 350px;
+}
+
+.paperTitle {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-neutral-900, #111827);
+  margin-bottom: 0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.paperFilename {
+  font-size: 0.75rem;
+  color: var(--color-neutral-600, #6B7280);
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.statusIcon {
+  font-size: 0.5rem;
+}
+
+.dateText {
+  font-size: 0.875rem;
+  color: var(--color-neutral-600, #6B7280);
+}
+
+.reviewButton {
+  padding: 0.5rem 1rem;
+  background-color: var(--color-primary-light, #e8f0f8);
+  color: var(--color-primary-main, #1a5490);
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.reviewButton:hover {
+  background-color: var(--color-primary-main, #1a5490);
+  color: white;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.emptyIcon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.emptyTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-neutral-900, #111827);
+  margin-bottom: 0.5rem;
+}
+
+.emptyText {
+  font-size: 0.875rem;
+  color: var(--color-neutral-600, #6B7280);
+}
+
+.workloadGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.workloadCard {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--color-neutral-200, #E5E7EB);
+}
+
+.workloadCard h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-neutral-900, #111827);
+  margin-bottom: 1rem;
+}
+
+.workloadList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.workloadItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: var(--color-neutral-50, #F9FAFB);
+  border-radius: 8px;
+}
+
+.workloadItemTitle {
+  font-size: 0.875rem;
+  color: var(--color-neutral-800, #374151);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.workloadItemBadge {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary-main, #1a5490);
+  margin-left: 1rem;
+}
+
+.workloadItemStatus {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  margin-left: 1rem;
+}
+
+.workloadEmpty {
+  font-size: 0.875rem;
+  color: var(--color-neutral-600, #6B7280);
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .metricsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .metricCard {
+    padding: 1rem;
+  }
+
+  .metricValue {
+    font-size: 1.75rem;
+  }
+
+  .assignmentsSection {
+    padding: 1rem;
+  }
+
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .assignmentsTable {
+    font-size: 0.875rem;
+  }
+
+  .assignmentsTable th,
+  .assignmentsTable td {
+    padding: 0.5rem;
+  }
+
+  .paperInfo {
+    max-width: 200px;
+  }
+
+  .workloadGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Stack table on mobile */
+  .tableContainer {
+    display: block;
+  }
+
+  .assignmentsTable thead {
+    display: none;
+  }
+
+  .assignmentsTable tbody tr {
+    display: block;
+    margin-bottom: 1rem;
+    border: 1px solid var(--color-neutral-200, #E5E7EB);
+    border-radius: 8px;
+    padding: 1rem;
+  }
+
+  .assignmentsTable td {
+    display: block;
+    padding: 0.5rem 0;
+    text-align: left !important;
+  }
+
+  .assignmentsTable td:before {
+    content: attr(data-label);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--color-neutral-600, #6B7280);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  .paperInfo {
+    max-width: 100%;
+  }
+
+  .reviewButton {
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .emptyState {
+    padding: 2rem 0;
+  }
+
+  .emptyIcon {
+    font-size: 3rem;
+  }
+
+  .workloadCard {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,49 @@
+/* MyCertificates (Reviewer) responsive styles */
+
+.container {
+  padding: 2rem;
+  background-color: #F9FAFB;
+  min-height: 100vh;
+}
+
+.certCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.certDetails {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive: Tablet (≤768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .certCard {
+    flex-direction: column;
+  }
+
+  .certDetails {
+    grid-template-columns: 1fr;
+  }
+
+  .certCard button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Responsive: Small mobile (≤480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem;
+  }
+}

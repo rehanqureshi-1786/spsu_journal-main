@@ -1,0 +1,263 @@
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 0.25rem;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: #6B7280;
+  margin: 0;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #E5E7EB;
+  flex-wrap: wrap;
+}
+
+.pageSelector {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.selectorLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  white-space: nowrap;
+}
+
+.select {
+  padding: 0.5rem 2rem 0.5rem 0.75rem;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: #111827;
+  background: white;
+  cursor: pointer;
+  min-width: 200px;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #1a5490;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.previewBtn {
+  padding: 0.5rem 1rem;
+  background: white;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.previewBtn:hover {
+  background: #F9FAFB;
+  border-color: #9CA3AF;
+}
+
+.saveBtn {
+  padding: 0.5rem 1.25rem;
+  background: #1a5490;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.saveBtn:hover:not(:disabled) {
+  background: #4338CA;
+}
+
+.saveBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.errorMsg {
+  padding: 0.75rem 1rem;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-radius: 8px;
+  color: #DC2626;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.successMsg {
+  padding: 0.75rem 1rem;
+  background: #F0FDF4;
+  border: 1px solid #BBF7D0;
+  border-radius: 8px;
+  color: #16A34A;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.lastUpdated {
+  font-size: 0.75rem;
+  color: #9CA3AF;
+  margin-bottom: 0.75rem;
+}
+
+.unsavedWarning {
+  padding: 0.5rem 1rem;
+  background: #FFFBEB;
+  border: 1px solid #FDE68A;
+  border-radius: 8px;
+  color: #D97706;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.contentArea {
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #E5E7EB;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.loadingState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  color: #6B7280;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #E5E7EB;
+  border-top-color: #1a5490;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.previewArea {
+  min-height: 500px;
+}
+
+.previewHeader {
+  padding: 0.75rem 1rem;
+  background: #F9FAFB;
+  border-bottom: 1px solid #E5E7EB;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #6B7280;
+}
+
+.previewContent {
+  padding: 2rem;
+  line-height: 1.7;
+  color: #374151;
+  font-size: 1rem;
+}
+
+.previewContent h1,
+.previewContent h2,
+.previewContent h3 {
+  color: #111827;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.previewContent p {
+  margin-bottom: 1rem;
+}
+
+.previewContent ul,
+.previewContent ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.previewContent img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pageSelector {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .select {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .actions {
+    justify-content: flex-end;
+  }
+
+  .previewContent {
+    padding: 1rem;
+  }
+}
+
+/* Responsive: Small mobile (≤480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}

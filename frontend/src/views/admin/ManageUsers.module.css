@@ -1,0 +1,47 @@
+/* ManageUsers Responsive Styles */
+
+.container {
+  /* Base styles handled by inline styles */
+}
+
+.header {
+  /* Base styles handled by inline styles */
+}
+
+.searchSection {
+  /* Base styles handled by inline styles */
+}
+
+/* Responsive: Tablet (≤768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem !important;
+  }
+
+  .header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+  }
+
+  .header button {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .searchSection {
+    padding: 1rem !important;
+  }
+
+  .searchSection input {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+}
+
+/* Responsive: Small mobile (≤480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem !important;
+  }
+}

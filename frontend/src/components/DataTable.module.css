@@ -1,0 +1,340 @@
+/**
+ * DataTable Component Styles
+ * 
+ * Modern styling for the DataTable component with:
+ * - Alternating row colors
+ * - Hover row highlighting
+ * - Sticky header on scroll
+ * - Mobile card view transformation
+ * - Loading skeleton states
+ * - Empty state with illustration
+ * 
+ * Requirements: 10.1, 10.2, 10.3, 10.4, 11.4
+ */
+
+/* ===== CONTAINER ===== */
+.container {
+  width: 100%;
+}
+
+/* ===== FILTER INPUT ===== */
+.filterContainer {
+  margin-bottom: var(--spacing-4);
+}
+
+.filterInput {
+  width: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  border: 1px solid var(--color-border-main);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-paper);
+  transition: border-color var(--transition-fast) var(--timing-ease-in-out),
+              box-shadow var(--transition-fast) var(--timing-ease-in-out);
+}
+
+.filterInput:focus {
+  outline: none;
+  border-color: var(--color-primary-main);
+  box-shadow: 0 0 0 3px var(--color-primary-100);
+}
+
+.filterInput::placeholder {
+  color: var(--color-text-hint);
+}
+
+/* ===== TABLE WRAPPER ===== */
+.tableWrapper {
+  overflow-x: auto;
+  background-color: var(--color-bg-paper);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+/* ===== TABLE ===== */
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: var(--color-bg-paper);
+}
+
+/* ===== TABLE HEADER ===== */
+.tableHeader {
+  background-color: var(--color-neutral-50);
+  border-bottom: 2px solid var(--color-border-main);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-index-sticky);
+}
+
+.tableHeaderRow {
+  /* No additional styles needed */
+}
+
+.tableHeaderCell {
+  padding: var(--spacing-4) var(--spacing-6);
+  text-align: left;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  white-space: nowrap;
+  background-color: var(--color-neutral-50);
+  transition: background-color var(--transition-fast) var(--timing-ease-in-out);
+}
+
+.tableHeaderCell.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.tableHeaderCell.sortable:hover {
+  background-color: var(--color-neutral-100);
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.sortIcon {
+  color: var(--color-primary-main);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+/* ===== TABLE BODY ===== */
+.tableBody {
+  /* No additional styles needed */
+}
+
+.tableRow {
+  border-bottom: 1px solid var(--color-border-light);
+  transition: background-color var(--transition-fast) var(--timing-ease-in-out);
+}
+
+/* Alternating row colors */
+.tableRow:nth-child(even) {
+  background-color: var(--color-neutral-50);
+}
+
+.tableRow:nth-child(odd) {
+  background-color: var(--color-bg-paper);
+}
+
+/* Hover row highlighting */
+.tableRow:hover {
+  background-color: var(--color-primary-50);
+}
+
+.tableRow.clickable {
+  cursor: pointer;
+}
+
+.tableRow.clickable:hover {
+  background-color: var(--color-primary-100);
+}
+
+.tableCell {
+  padding: var(--spacing-4) var(--spacing-6);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+/* ===== EMPTY STATE ===== */
+.emptyState {
+  padding: var(--spacing-12) var(--spacing-6);
+  text-align: center;
+}
+
+.emptyStateIcon {
+  font-size: var(--font-size-6xl);
+  color: var(--color-neutral-300);
+  margin-bottom: var(--spacing-4);
+}
+
+.emptyStateTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-2);
+}
+
+.emptyStateMessage {
+  font-size: var(--font-size-base);
+  color: var(--color-text-hint);
+}
+
+/* ===== LOADING SKELETON ===== */
+.loadingContainer {
+  padding: var(--spacing-4);
+}
+
+.skeletonRow {
+  display: flex;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4) var(--spacing-6);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.skeletonCell {
+  height: 20px;
+  background: linear-gradient(
+    90deg,
+    var(--color-neutral-200) 0%,
+    var(--color-neutral-100) 50%,
+    var(--color-neutral-200) 100%
+  );
+  background-size: 200% 100%;
+  border-radius: var(--radius-base);
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ===== MOBILE CARD VIEW ===== */
+.mobileCardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.mobileCard {
+  background-color: var(--color-bg-paper);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-4);
+  box-shadow: var(--shadow-base);
+  transition: box-shadow var(--transition-fast) var(--timing-ease-in-out),
+              transform var(--transition-fast) var(--timing-ease-in-out);
+}
+
+.mobileCard:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.mobileCard.clickable {
+  cursor: pointer;
+}
+
+.mobileCard.clickable:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.mobileCardRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: var(--spacing-3) 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.mobileCardRow:last-child {
+  border-bottom: none;
+}
+
+.mobileCardLabel {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-hint);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  flex-shrink: 0;
+  margin-right: var(--spacing-4);
+}
+
+.mobileCardValue {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  text-align: right;
+  word-break: break-word;
+  flex: 1;
+}
+
+/* ===== RESULTS COUNT ===== */
+.resultsCount {
+  margin-top: var(--spacing-4);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-hint);
+  text-align: center;
+}
+
+.resultsCount .highlight {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Mobile: Show card view by default */
+@media (max-width: 768px) {
+  .tableWrapper {
+    display: none;
+  }
+  
+  .mobileCardContainer {
+    display: flex;
+  }
+  
+  /* Ensure touch targets are at least 44x44px */
+  .mobileCard.clickable {
+    min-height: 44px;
+  }
+}
+
+/* Tablet and Desktop: Show table view */
+@media (min-width: 769px) {
+  .tableWrapper {
+    display: block;
+  }
+  
+  .mobileCardContainer {
+    display: none;
+  }
+}
+
+/* Desktop: Larger spacing */
+@media (min-width: 1024px) {
+  .tableHeaderCell {
+    padding: var(--spacing-5) var(--spacing-8);
+  }
+  
+  .tableCell {
+    padding: var(--spacing-5) var(--spacing-8);
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+
+/* Focus styles for keyboard navigation */
+.tableRow.clickable:focus-visible,
+.mobileCard.clickable:focus-visible {
+  outline: 2px solid var(--color-primary-main);
+  outline-offset: 2px;
+}
+
+/* Screen reader only text */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

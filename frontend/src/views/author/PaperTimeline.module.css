@@ -1,0 +1,26 @@
+/* PaperTimeline responsive styles */
+
+.container {
+  background-color: #F9FAFB;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.infoBox {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Responsive: Tablet (≤768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+}
+
+/* Responsive: Small mobile (≤480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem;
+  }
+}

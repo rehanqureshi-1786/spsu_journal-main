@@ -1,0 +1,399 @@
+/**
+ * Navbar Component Styles
+ * Modern design with theme integration
+ * 
+ * Features:
+ * - Smooth scroll effect with shadow
+ * - Enhanced mobile menu with slide-in animation
+ * - Improved active link highlighting
+ * - Hover effects for navigation links
+ * - Theme-based colors and spacing
+ */
+
+/* ===== NAVBAR BASE ===== */
+.navbar {
+  background-color: var(--color-bg-paper);
+  color: var(--color-text-primary);
+  padding: 0;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-index-sticky);
+  transition: box-shadow var(--transition-base) var(--timing-ease-in-out);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.navbar.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+/* ===== NAVBAR CONTAINER ===== */
+.container {
+  max-width: var(--container-2xl);
+  margin: 0 auto;
+  padding: 0 var(--spacing-6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+  position: relative;
+}
+
+/* ===== BRAND SECTION ===== */
+.brand {
+  display: flex;
+  align-items: center;
+  z-index: calc(var(--z-index-sticky) + 1);
+}
+
+.brandLink {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+  transition: opacity var(--transition-fast) var(--timing-ease-out);
+}
+
+.brandLink:hover {
+  opacity: 0.85;
+}
+
+.brandLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brandLogo svg {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+  transition: filter var(--transition-fast) var(--timing-ease-out);
+}
+
+.brandLink:hover .brandLogo svg {
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.12));
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.brandName {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-none);
+  color: var(--color-text-primary);
+}
+
+.brandSubtitle {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  opacity: 0.65;
+  letter-spacing: var(--letter-spacing-wider);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+/* ===== NAVIGATION MENU ===== */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.links {
+  display: flex;
+  gap: 0;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+/* ===== NAVIGATION LINKS ===== */
+.navLink {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast) var(--timing-ease-out);
+  position: relative;
+  letter-spacing: var(--letter-spacing-normal);
+  white-space: nowrap;
+}
+
+.navLink span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover effect with background and color change */
+.navLink:hover {
+  color: var(--color-primary-main);
+  background-color: var(--color-primary-50);
+  transform: translateY(-1px);
+}
+
+/* Active link styling with stronger emphasis */
+.navLink.active {
+  color: var(--color-primary-main);
+  background-color: var(--color-primary-100);
+  font-weight: var(--font-weight-semibold);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Active link with subtle border accent */
+.navLink.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-primary-main),
+    transparent
+  );
+  border-radius: var(--radius-full);
+}
+
+/* ===== AUTH BUTTONS ===== */
+.auth {
+  display: flex;
+  gap: var(--spacing-3);
+  align-items: center;
+}
+
+/* ===== MOBILE MENU TOGGLE ===== */
+.mobileToggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 28px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: calc(var(--z-index-sticky) + 1);
+  transition: transform var(--transition-fast) var(--timing-ease-out);
+}
+
+.mobileToggle:hover {
+  transform: scale(1.05);
+}
+
+.mobileToggle:active {
+  transform: scale(0.95);
+}
+
+.hamburgerLine {
+  width: 28px;
+  height: 2.5px;
+  background-color: var(--color-text-primary);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-base) var(--timing-ease-in-out);
+  transform-origin: center;
+}
+
+.hamburgerLine.open:nth-child(1) {
+  transform: rotate(45deg) translateY(7px);
+}
+
+.hamburgerLine.open:nth-child(2) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.hamburgerLine.open:nth-child(3) {
+  transform: rotate(-45deg) translateY(-7px);
+}
+
+/* ===== MOBILE MENU OVERLAY ===== */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: calc(var(--z-index-sticky) - 1);
+  animation: fadeIn var(--transition-base) var(--timing-ease-out);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===== MOBILE RESPONSIVE STYLES ===== */
+@media (max-width: 1024px) {
+  .container {
+    height: 70px;
+    padding: 0 var(--spacing-5);
+  }
+
+  .brandName {
+    font-size: var(--font-size-xl);
+  }
+
+  .brandSubtitle {
+    font-size: 0.7rem;
+  }
+
+  .brandLogo svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .mobileToggle {
+    display: flex;
+  }
+  
+  .overlay {
+    display: block;
+  }
+  
+  /* Mobile menu with slide-in animation */
+  .menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 320px;
+    max-width: 85%;
+    background-color: var(--color-bg-paper);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 6rem var(--spacing-8) var(--spacing-8);
+    gap: var(--spacing-8);
+    box-shadow: var(--shadow-2xl);
+    transition: transform var(--transition-slow) var(--timing-spring);
+    z-index: var(--z-index-sticky);
+    overflow-y: auto;
+  }
+  
+  .menu.mobileClosed {
+    transform: translateX(100%);
+  }
+  
+  .menu.mobileOpen {
+    transform: translateX(0);
+    animation: slideIn var(--transition-slow) var(--timing-spring);
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  .links {
+    flex-direction: column;
+    gap: var(--spacing-2);
+    width: 100%;
+  }
+  
+  .navLink {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: var(--spacing-4) var(--spacing-5);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-base);
+  }
+
+  .navLink:hover {
+    background-color: var(--color-neutral-100);
+    transform: translateX(4px);
+  }
+
+  .navLink.active {
+    background-color: var(--color-primary-100);
+    transform: translateX(4px);
+  }
+
+  /* Remove bottom border on mobile active links */
+  .navLink.active::after {
+    display: none;
+  }
+  
+  .auth {
+    flex-direction: column;
+    width: 100%;
+    gap: var(--spacing-3);
+    padding-top: var(--spacing-6);
+    border-top: 1px solid var(--color-border-light);
+  }
+  
+  .auth :global(.btn) {
+    width: 100%;
+    justify-content: center;
+    padding: var(--spacing-3) var(--spacing-5);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--spacing-4);
+  }
+
+  .brandName {
+    font-size: var(--font-size-lg);
+  }
+
+  .menu {
+    width: 280px;
+    padding: 5rem var(--spacing-6) var(--spacing-6);
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+.mobileToggle:focus-visible {
+  outline: 2px solid var(--color-primary-main);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.navLink:focus-visible {
+  outline: 2px solid var(--color-primary-main);
+  outline-offset: 2px;
+}
+
+/* ===== SMOOTH SCROLLING ENHANCEMENT ===== */
+@media (prefers-reduced-motion: no-preference) {
+  .navbar {
+    transition: box-shadow var(--transition-base) var(--timing-ease-out);
+  }
+  
+  .navLink {
+    transition: all var(--transition-fast) var(--timing-spring);
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .navLink,
+  .brandLink,
+  .mobileToggle,
+  .menu {
+    transition: none;
+    animation: none;
+  }
+}

@@ -1,0 +1,292 @@
+/* ImageUploader Component Styles */
+
+.uploader {
+  width: 100%;
+}
+
+/* Drop zone */
+.dropzone {
+  position: relative;
+  border: 2px dashed var(--color-neutral-300);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-8);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-duration-base) var(--transition-timing-ease);
+  background-color: var(--color-neutral-50);
+}
+
+.dropzone:hover {
+  border-color: var(--color-primary-main);
+  background-color: var(--color-primary-light);
+}
+
+.dropzone:focus {
+  outline: none;
+  border-color: var(--color-primary-main);
+  box-shadow: 0 0 0 3px var(--color-primary-light);
+}
+
+.uploader--dragging .dropzone {
+  border-color: var(--color-primary-main);
+  background-color: var(--color-primary-light);
+  transform: scale(1.02);
+}
+
+.uploader--disabled .dropzone {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.uploader--uploading .dropzone {
+  opacity: 0.7;
+  cursor: wait;
+  pointer-events: none;
+}
+
+/* File input (hidden) */
+.fileInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Drop zone content */
+.dropzoneContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.uploadIcon {
+  width: 48px;
+  height: 48px;
+  color: var(--color-neutral-400);
+  transition: color var(--transition-duration-base) var(--transition-timing-ease);
+}
+
+.dropzone:hover .uploadIcon,
+.uploader--dragging .uploadIcon {
+  color: var(--color-primary-main);
+}
+
+.dropzoneText {
+  font-size: var(--font-size-base);
+  color: var(--color-neutral-600);
+  margin: 0;
+}
+
+.dropzoneTextPrimary {
+  color: var(--color-primary-main);
+  font-weight: var(--font-weight-semibold);
+}
+
+.dropzoneHint {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-500);
+  margin: 0;
+}
+
+/* Progress bar */
+.progress {
+  margin-top: var(--spacing-4);
+}
+
+.progressBar {
+  width: 100%;
+  height: 8px;
+  background-color: var(--color-neutral-200);
+  border-radius: var(--border-radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary-main),
+    var(--color-primary-light)
+  );
+  border-radius: var(--border-radius-full);
+  transition: width var(--transition-duration-base) var(--transition-timing-ease);
+  animation: progressAnimation 1.5s ease-in-out infinite;
+}
+
+@keyframes progressAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.progressText {
+  margin-top: var(--spacing-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-600);
+  text-align: center;
+}
+
+/* Error message */
+.error {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-4);
+  padding: var(--spacing-3);
+  background-color: var(--color-error-light);
+  border: 1px solid var(--color-error-main);
+  border-radius: var(--border-radius-md);
+  color: var(--color-error-dark);
+  font-size: var(--font-size-sm);
+}
+
+.errorIcon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Preview grid */
+.previewGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--spacing-4);
+  margin-top: var(--spacing-4);
+}
+
+.previewItem {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  background-color: var(--color-neutral-100);
+  transition: transform var(--transition-duration-base) var(--transition-timing-ease);
+}
+
+.previewItem:hover {
+  transform: scale(1.05);
+}
+
+.previewImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.previewOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-2);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0)
+  );
+  color: var(--color-white);
+  opacity: 0;
+  transition: opacity var(--transition-duration-base) var(--transition-timing-ease);
+}
+
+.previewItem:hover .previewOverlay {
+  opacity: 1;
+}
+
+.previewName {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.previewSize {
+  font-size: var(--font-size-xs);
+  margin: 0;
+  opacity: 0.9;
+}
+
+.removeButton {
+  position: absolute;
+  top: var(--spacing-2);
+  right: var(--spacing-2);
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  border-radius: var(--border-radius-full);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: var(--color-white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all var(--transition-duration-base) var(--transition-timing-ease);
+}
+
+.removeButton:hover {
+  background-color: var(--color-error-main);
+  transform: scale(1.1);
+}
+
+.previewItem:hover .removeButton {
+  opacity: 1;
+}
+
+.removeButton svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dropzone {
+    padding: var(--spacing-6);
+  }
+
+  .uploadIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .dropzoneText {
+    font-size: var(--font-size-sm);
+  }
+
+  .previewGrid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: var(--spacing-3);
+  }
+}
+
+@media (max-width: 480px) {
+  .dropzone {
+    padding: var(--spacing-4);
+  }
+
+  .uploadIcon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .previewGrid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: var(--spacing-2);
+  }
+}

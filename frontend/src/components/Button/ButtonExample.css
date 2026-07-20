@@ -1,0 +1,92 @@
+/**
+ * Button Example Styles
+ * 
+ * Styles for the Button component examples page.
+ */
+
+.button-example {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-8) var(--spacing-4);
+}
+
+.button-example h1 {
+  font-size: var(--font-size-4xl);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-8);
+  text-align: center;
+}
+
+.example-section {
+  margin-bottom: var(--spacing-12);
+  padding: var(--spacing-6);
+  background-color: var(--color-bg-paper);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.example-section h2 {
+  font-size: var(--font-size-2xl);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-6);
+  padding-bottom: var(--spacing-3);
+  border-bottom: 2px solid var(--color-border-light);
+}
+
+.example-section h3 {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-4);
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-4);
+  align-items: center;
+}
+
+.button-group-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  max-width: 400px;
+}
+
+.example-card {
+  padding: var(--spacing-6);
+  background-color: var(--color-neutral-50);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-4);
+}
+
+.example-card:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .button-example {
+    padding: var(--spacing-4) var(--spacing-3);
+  }
+
+  .button-example h1 {
+    font-size: var(--font-size-3xl);
+  }
+
+  .example-section {
+    padding: var(--spacing-4);
+  }
+
+  .example-section h2 {
+    font-size: var(--font-size-xl);
+  }
+
+  .button-group {
+    gap: var(--spacing-3);
+  }
+
+  .example-card {
+    padding: var(--spacing-4);
+  }
+}
