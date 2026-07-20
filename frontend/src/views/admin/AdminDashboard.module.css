@@ -3,7 +3,10 @@
 .container {
   background-color: var(--color-neutral-50, #F9FAFB);
   min-height: 100vh;
-  padding: 2rem;
+  padding: 1.5rem;
+  overflow-x: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .header {
@@ -42,9 +45,12 @@
   border: 1px solid var(--color-neutral-300, #D1D5DB);
   border-radius: 8px;
   font-size: 0.875rem;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
+  min-width: 0;
   outline: none;
   transition: border-color 0.2s ease;
+  box-sizing: border-box;
 }
 
 .searchInput:focus {

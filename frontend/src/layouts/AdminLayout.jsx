@@ -617,7 +617,10 @@ const AdminLayout = () => {
         marginLeft: isMobile ? 0 : '260px', 
         flex: 1, 
         minHeight: '100vh',
-        marginTop: isMobile ? '60px' : 0
+        marginTop: isMobile ? '60px' : 0,
+        overflowX: 'hidden',
+        width: isMobile ? '100%' : 'calc(100vw - 260px)',
+        maxWidth: isMobile ? '100vw' : 'calc(100vw - 260px)'
       }}>
         <Outlet />
       </main>
