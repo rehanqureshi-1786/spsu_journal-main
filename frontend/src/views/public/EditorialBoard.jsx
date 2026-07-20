@@ -40,7 +40,7 @@ function EditorialBoard() {
   ]
 
   return (
-    <div style={{ backgroundColor: '#f5f5f5' }} ref={editableRef}>
+    <div style={{ backgroundColor: '#f5f5f5', overflowX: 'hidden', width: '100%', maxWidth: '100vw' }} ref={editableRef}>
       {/* Hero */}
       <section style={H.hero}>
         <h1 style={H.h1}>Editorial Board</h1>
@@ -51,16 +51,16 @@ function EditorialBoard() {
       {/* Chief Patron */}
       <section style={H.sec}><div style={H.wrap}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}><h2 style={H.title}>Chief Patron</h2><div style={H.gold}></div></div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem', maxWidth: 850, margin: '0 auto', padding: '2.5rem', background: 'white', borderRadius: 16, boxShadow: '0 8px 30px rgba(0,0,0,0.08)', border: '2px solid #d4af37', transition: 'all 0.3s ease', cursor: 'pointer' }} onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-8px)'; e.currentTarget.style.boxShadow = '0 16px 50px rgba(212,175,55,0.25)'; e.currentTarget.style.borderColor = '#b8962e' }} onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 8px 30px rgba(0,0,0,0.08)'; e.currentTarget.style.borderColor = '#d4af37' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: '2rem', maxWidth: 850, margin: '0 auto', padding: '1.5rem', background: 'white', borderRadius: 16, boxShadow: '0 8px 30px rgba(0,0,0,0.08)', border: '2px solid #d4af37', transition: 'all 0.3s ease', cursor: 'pointer', textAlign: 'center' }} onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-8px)'; e.currentTarget.style.boxShadow = '0 16px 50px rgba(212,175,55,0.25)'; e.currentTarget.style.borderColor = '#b8962e' }} onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 8px 30px rgba(0,0,0,0.08)'; e.currentTarget.style.borderColor = '#d4af37' }}>
           <div style={{ flexShrink: 0, textAlign: 'center' }}>
-            <img src='/faculty/sanjay-sinha.png' alt='Dr. Sanjay Sinha, FRSA' style={{ width: 160, height: 160, borderRadius: 12, objectFit: 'cover', border: '4px solid #d4af37' }} />
+            <img src='/faculty/sanjay-sinha.png' alt='Dr. Sanjay Sinha, FRSA' style={{ width: 140, height: 140, borderRadius: 12, objectFit: 'cover', border: '4px solid #d4af37' }} />
             <div style={{ display: 'inline-block', background: 'linear-gradient(135deg, #d4af37, #b8962e)', color: '#0a1628', padding: '0.35rem 1rem', borderRadius: 20, fontSize: '0.65rem', fontWeight: 700, letterSpacing: 1, marginTop: '0.75rem', textTransform: 'uppercase' }}>Honorary Chairperson</div>
           </div>
           <div>
-            <h3 style={{ fontSize: '1.5rem', color: '#0a1628', fontWeight: 700, marginBottom: '0.25rem' }}>Dr. Sanjay Sinha, FRSA</h3>
-            <p style={{ fontSize: '1.05rem', color: '#1a5490', fontWeight: 600, marginBottom: '1rem' }}>President, SPSU</p>
-            <p style={{ fontSize: '0.9rem', color: '#555', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>📍 Sir Padampat Singhania University (SPSU)</p>
-            <p style={{ fontSize: '0.9rem', color: '#555', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>📧 Udaipur, Rajasthan, India</p>
+            <h3 style={{ fontSize: '1.35rem', color: '#0a1628', fontWeight: 700, marginBottom: '0.25rem' }}>Dr. Sanjay Sinha, FRSA</h3>
+            <p style={{ fontSize: '1rem', color: '#1a5490', fontWeight: 600, marginBottom: '1rem' }}>President, SPSU</p>
+            <p style={{ fontSize: '0.85rem', color: '#555', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>📍 Sir Padampat Singhania University (SPSU)</p>
+            <p style={{ fontSize: '0.85rem', color: '#555', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>📧 Udaipur, Rajasthan, India</p>
           </div>
         </div>
       </div></section>
@@ -68,7 +68,7 @@ function EditorialBoard() {
       {/* Advisory Board */}
       <section style={H.secAlt}><div style={H.wrap}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}><h2 style={H.title}>Editorial Advisory Board</h2><div style={H.gold}></div></div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
           {advisoryMembers.map((m, i) => (
             <div key={i} style={{ ...H.card, textAlign: 'center' }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-6px)'; e.currentTarget.style.boxShadow = '0 12px 35px rgba(0,0,0,0.1)' }}
@@ -88,7 +88,7 @@ function EditorialBoard() {
       {/* Editorial Board */}
       <section style={H.sec}><div style={H.wrap}>
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}><h2 style={H.title}>Editorial Board</h2><div style={H.gold}></div></div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '1.25rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '1.25rem' }}>
           {boardMembers.map((m, i) => (
             <div key={i} style={{ ...H.card, padding: 0, overflow: 'hidden' }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-6px)'; e.currentTarget.style.boxShadow = '0 12px 35px rgba(0,0,0,0.1)' }}
