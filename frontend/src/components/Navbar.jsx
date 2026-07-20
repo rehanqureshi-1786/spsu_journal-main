@@ -72,10 +72,11 @@ function Navbar() {
     <>
       {/* Top Bar */}
       <div style={{ background: '#0a2240', color: '#ffffff', fontSize: '0.75rem', padding: '0.4rem 0', borderBottom: '1px solid rgba(212,175,55,0.3)' }}>
-        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <span>Sir Padampat Singhania University, Udaipur</span>
-          <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-            <span>ISSN: XXXX-XXXX</span>
+        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: isMobile ? '0 1rem' : '0 2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
+          <span style={{ display: isMobile ? 'none' : 'inline' }}>Sir Padampat Singhania University, Udaipur</span>
+          <span style={{ display: !isMobile ? 'none' : 'inline' }}>SPSU, Udaipur</span>
+          <div style={{ display: 'flex', gap: isMobile ? '1rem' : '1.5rem', alignItems: 'center', marginLeft: isMobile ? 'auto' : 0 }}>
+            <span style={{ display: isMobile ? 'none' : 'inline' }}>ISSN: XXXX-XXXX</span>
             <a href="https://www.spsu.ac.in" target="_blank" rel="noreferrer" style={{ color: '#d4af37', textDecoration: 'none', fontWeight: '600' }}>SPSU Main Site →</a>
           </div>
         </div>
@@ -98,19 +99,25 @@ function Navbar() {
 
           {/* Mobile Toggle */}
           {isMobile && (
-            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Toggle menu" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.5rem', zIndex: 1001 }}>
-              <div style={{ width: 24, height: 2, background: 'white', marginBottom: 6, transition: '0.3s', transform: isMobileMenuOpen ? 'rotate(45deg) translateY(8px)' : 'none' }}></div>
+            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Toggle menu" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.5rem', zIndex: 1001, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <div style={{ width: 24, height: 2, background: 'white', marginBottom: 6, transition: '0.3s', transform: isMobileMenuOpen ? 'translateY(8px) rotate(45deg)' : 'none' }}></div>
               <div style={{ width: 24, height: 2, background: 'white', marginBottom: 6, transition: '0.3s', opacity: isMobileMenuOpen ? 0 : 1 }}></div>
-              <div style={{ width: 24, height: 2, background: 'white', transition: '0.3s', transform: isMobileMenuOpen ? 'rotate(-45deg) translateY(-8px)' : 'none' }}></div>
+              <div style={{ width: 24, height: 2, background: 'white', transition: '0.3s', transform: isMobileMenuOpen ? 'translateY(-8px) rotate(-45deg)' : 'none' }}></div>
             </button>
           )}
 
           {/* Nav Links */}
           <div style={{
-            display: isMobile ? (isMobileMenuOpen ? 'flex' : 'none') : 'flex',
+            display: 'flex',
             alignItems: isMobile ? 'flex-start' : 'center',
             gap: isMobile ? '0' : '0.25rem',
-            ...(isMobile ? { position: 'fixed', top: 0, right: 0, height: '100vh', width: '300px', background: '#1a5490', flexDirection: 'column', padding: '5rem 1.5rem 2rem', zIndex: 1000, boxShadow: '-4px 0 24px rgba(0,0,0,0.3)' } : {})
+            ...(isMobile ? { 
+              position: 'fixed', top: 0, right: 0, height: '100vh', width: '300px', maxWidth: '85vw',
+              background: '#1a5490', flexDirection: 'column', padding: '5rem 1.5rem 2rem', 
+              zIndex: 1000, boxShadow: '-4px 0 24px rgba(0,0,0,0.3)',
+              transition: 'transform 0.3s ease-in-out',
+              transform: isMobileMenuOpen ? 'translateX(0)' : 'translateX(100%)'
+            } : {})
           }}>
             {['/', '/about', '/editorial-board', '/author-guidelines', '/reviewer-guidelines', '/issues', '/contact'].map((path) => {
               const labels = { '/': 'Home', '/about': 'About', '/editorial-board': 'Editorial Board', '/author-guidelines': 'For Authors', '/reviewer-guidelines': 'For Reviewers', '/issues': 'Issues & Volumes', '/contact': 'Contact' }
