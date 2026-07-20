@@ -4,7 +4,7 @@ Manages environment variables and application settings.
 """
 from pydantic import field_validator
 from pydantic_settings import BaseSettings
-from typing import Optional
+from typing import Any, Optional
 import os
 
 
@@ -49,7 +49,27 @@ class Settings(BaseSettings):
     ALLOWED_MIME_TYPES: list = ["application/pdf"]
     
     # CORS
-    CORS_ORIGINS: list = ["http://localhost:3000", "http://localhost:5173"]
+    CORS_ORIGINS: Any = ["http://localhost:3000", "http://localhost:5173"]
+    
+    @field_validator("CORS_ORIGINS", mode="before")
+    @classmethod
+    def assemble_cors_origins(cls, v) -> list:
+        if isinstance(v, str):
+            v = v.strip()
+            if v.startswith("[") and v.endswith("]"):
+                try:
+                    import json
+                    parsed = json.loads(v)
+                    if isinstance(parsed, list):
+                        return [str(item).strip().rstrip('/') for item in parsed]
+                except Exception:
+                    pass
+            if "," in v:
+                return [item.strip().rstrip('/') for item in v.split(",") if item.strip()]
+            return [v.rstrip('/')]
+        elif isinstance(v, list):
+            return [str(item).strip().rstrip('/') for item in v]
+        return v
     
     class Config:
         env_file = ".env"
