@@ -2,12 +2,14 @@
 Configuration settings for The Essence Journal System.
 Manages environment variables and application settings.
 """
+from pydantic import field_validator
 from pydantic_settings import BaseSettings
 from typing import Optional
 import os
 
 
 class Settings(BaseSettings):
+
     """Application settings loaded from environment variables."""
     
     # Application
@@ -21,6 +23,13 @@ class Settings(BaseSettings):
     
     # Database
     DATABASE_URL: str = "mysql+pymysql://root:123456@localhost:3306/essence_journal"
+    
+    @field_validator("DATABASE_URL", mode="before")
+    @classmethod
+    def assemble_db_url(cls, v: str) -> str:
+        if v and v.startswith("mysql://"):
+            return v.replace("mysql://", "mysql+pymysql://", 1)
+        return v
     
     # Security
     SECRET_KEY: str = "3807c2e806071445820cb4a0c474fbde266657347794f9ee53d43d3d08358c0d"
