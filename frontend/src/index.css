@@ -1675,6 +1675,22 @@ code {
   .auth-title {
     font-size: 1.75rem;
   }
+  
+  .process-container {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .process-step-wrapper {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .process-arrow {
+    transform: rotate(90deg);
+    margin: 1rem 0 !important;
+    padding: 0 !important;
+  }
 }
 
 @media (max-width: 480px) {

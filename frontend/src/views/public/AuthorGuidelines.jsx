@@ -37,9 +37,9 @@ function AuthorGuidelines() {
 
       <section style={H.sec}><div style={H.wrap}>
         <h2 style={H.title}>Submission Process</h2><div style={H.gold}></div>
-        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', flexWrap: 'wrap', gap: '1rem', marginTop: '1.5rem' }}>
+        <div className="process-container" style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', flexWrap: 'wrap', gap: '1rem', marginTop: '1.5rem' }}>
           {[['01','Register','Create author account'],['02','Upload','Submit manuscript PDF'],['03','Screening','Initial editorial check'],['04','Review','Peer review (4-6 weeks)'],['05','Decision','Accept / Revise / Reject']].map(([n,t,d],i) => (
-            <div key={i} style={{ display: 'flex', alignItems: 'flex-start' }}>
+            <div key={i} className="process-step-wrapper" style={{ display: 'flex', alignItems: 'flex-start' }}>
               <div style={{ textAlign: 'center', minWidth: 110 }}>
                 <div style={{ width: 50, height: 50, background: 'linear-gradient(135deg, #1a5490, #0f3d6e)', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', fontWeight: 700, margin: '0 auto 0.5rem', border: '3px solid #d4af37' }}>{n}</div>
                 <h3 style={{ fontSize: '0.9rem', fontWeight: 700, color: '#0a1628', marginBottom: '0.15rem' }}>{t}</h3>

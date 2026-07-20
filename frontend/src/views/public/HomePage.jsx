@@ -162,7 +162,7 @@ function HomePage() {
             <div style={{ width: 60, height: 3, background: '#d4af37', margin: '0 auto 1.5rem', borderRadius: 2 }}></div>
             <p style={{ fontSize: '1rem', color: '#555', maxWidth: 600, margin: '0 auto', lineHeight: 1.7 }}>Simple and transparent submission process</p>
           </div>
-          <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+          <div className="process-container" style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
             {[
               { step: '01', title: 'Register', desc: 'Create an author account' },
               { step: '02', title: 'Submit', desc: 'Upload manuscript (PDF)' },
@@ -170,7 +170,7 @@ function HomePage() {
               { step: '04', title: 'Revise', desc: 'Address feedback' },
               { step: '05', title: 'Publish', desc: 'Published online' }
             ].map((item, i) => (
-              <div key={i} style={{ display: 'flex', alignItems: 'flex-start' }}>
+              <div key={i} className="process-step-wrapper" style={{ display: 'flex', alignItems: 'flex-start' }}>
                 <div style={{ textAlign: 'center', minWidth: 120 }}>
                   <div style={{ width: 60, height: 60, background: 'linear-gradient(135deg, #1a5490, #0f3d6e)', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.15rem', fontWeight: 700, margin: '0 auto 0.75rem', boxShadow: '0 4px 15px rgba(26,84,144,0.3)', border: '3px solid #d4af37' }}>{item.step}</div>
                   <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0a1628', marginBottom: '0.2rem' }}>{item.title}</h3>

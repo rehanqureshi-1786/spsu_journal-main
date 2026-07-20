@@ -34,9 +34,9 @@ function ReviewerGuidelines() {
 
       <section style={H.sec}><div style={H.wrap}>
         <h2 style={H.title}>Review Process</h2><div style={H.gold}></div>
-        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', flexWrap: 'wrap', gap: '1rem', marginTop: '1.5rem' }}>
+        <div className="process-container" style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', flexWrap: 'wrap', gap: '1rem', marginTop: '1.5rem' }}>
           {[['01','Assignment','Receive review invitation'],['02','Download','Access anonymized manuscript'],['03','Evaluate','Assess using review criteria'],['04','Submit','Provide recommendation & comments']].map(([n,t,d],i) => (
-            <div key={i} style={{ display: 'flex', alignItems: 'flex-start' }}>
+            <div key={i} className="process-step-wrapper" style={{ display: 'flex', alignItems: 'flex-start' }}>
               <div style={{ textAlign: 'center', minWidth: 130 }}>
                 <div style={{ width: 55, height: 55, background: 'linear-gradient(135deg, #1a5490, #0f3d6e)', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.05rem', fontWeight: 700, margin: '0 auto 0.6rem', border: '3px solid #d4af37' }}>{n}</div>
                 <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: '#0a1628', marginBottom: '0.15rem' }}>{t}</h3>
