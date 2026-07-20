@@ -15,6 +15,10 @@ class Settings(BaseSettings):
     APP_VERSION: str = "1.0.0"
     DEBUG: bool = False
     
+    # Cookie Security
+    COOKIE_SECURE: bool = False
+    COOKIE_SAMESITE: str = "lax"
+    
     # Database
     DATABASE_URL: str = "mysql+pymysql://root:123456@localhost:3306/essence_journal"
     

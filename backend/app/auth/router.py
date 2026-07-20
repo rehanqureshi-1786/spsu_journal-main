@@ -8,6 +8,7 @@ from sqlalchemy.orm import Session
 from typing import Optional
 
 from app.core.database import get_db
+from app.core.config import settings
 from app.core.dependencies import get_current_user
 from app.users.models import User
 from app.audit.service import log_auth_event
@@ -95,8 +96,8 @@ async def login(
         key="access_token",
         value=tokens.access_token,
         httponly=True,
-        secure=False,  # Requires HTTPS in production
-        samesite="lax",
+        secure=settings.COOKIE_SECURE,
+        samesite=settings.COOKIE_SAMESITE,
         max_age=15 * 60,  # 15 minutes in seconds
     )
     
@@ -105,8 +106,8 @@ async def login(
         key="refresh_token",
         value=tokens.refresh_token,
         httponly=True,
-        secure=False,  # Requires HTTPS in production
-        samesite="lax",
+        secure=settings.COOKIE_SECURE,
+        samesite=settings.COOKIE_SAMESITE,
         max_age=1 * 24 * 60 * 60,  # 7 days in seconds
     )
     
@@ -150,13 +151,12 @@ async def refresh(
         # Generate new access token
         tokens = refresh_access_token(refresh_token, db)
         
-        # Set new access token in cookie
         response.set_cookie(
             key="access_token",
             value=tokens.access_token,
             httponly=True,
-            secure=False,
-            samesite="lax",
+            secure=settings.COOKIE_SECURE,
+            samesite=settings.COOKIE_SAMESITE,
             max_age=15 * 60,  # 15 minutes
         )
         
@@ -216,9 +216,9 @@ async def logout(
         key="access_token",
         path="/",
         domain=None,
-        secure=False,
+        secure=settings.COOKIE_SECURE,
         httponly=True,
-        samesite="lax"
+        samesite=settings.COOKIE_SAMESITE
     )
     
     # Clear refresh_token cookie with all attributes matching the set_cookie call
@@ -226,9 +226,9 @@ async def logout(
         key="refresh_token",
         path="/",
         domain=None,
-        secure=False,
+        secure=settings.COOKIE_SECURE,
         httponly=True,
-        samesite="lax"
+        samesite=settings.COOKIE_SAMESITE
     )
     
     return StatusResponse(
